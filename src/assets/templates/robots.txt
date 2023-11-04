@@ -1,0 +1,3 @@
+Sitemap: https://www.pubmed2xl.com/sitemap.xml
+
+User-agent: *

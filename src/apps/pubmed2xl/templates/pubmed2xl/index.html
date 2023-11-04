@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Download PubMed data into MS Excel{% endblock %}
+{% block styles %}<link href="{% static 'pubmed2xl/css/style.css' %}" rel="stylesheet" crossorigin="anonymous">{% endblock %}
+{% block lead %}Web application to download PubMed data into a Microsoft Excel spreadsheet{% endblock %}
+{% block description%}Download thousands of PubMed citations into a spreadsheet. Free, no ads, secure, encrypted, privacy, untraceable and simple to use.{% endblock %}
+{% block left_link_url %}{% url 'pubmed2xl:download_xml' %}{% endblock %}
+{% block logo_link_url %}{% url 'pubmed2xl:download_xml' %}{% endblock %}
+{% block left_link_text %}Download to XML{% endblock %}
+{% block right_link_url %}{% url 'pubmed2xl:faq' %}{% endblock %}
+{% block right_link_text %}FAQ's{% endblock %}
+{% block content %}{% include 'pubmed2xl/form.html' %}{% endblock %}
+{% block jscript %}
+    <script src="{% static 'pubmed2xl/js/rows_counter.js' %}"></script>
+{% endblock %}

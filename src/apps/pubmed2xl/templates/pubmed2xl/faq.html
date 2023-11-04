@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}PubMed2XL Frequenty Asked Questions{% endblock %}
+{% block styles %}<link href="{% static 'pubmed2xl/css/style.css' %}" rel="stylesheet" crossorigin="anonymous">{% endblock %}
+{% block lead %}Frequently Asked Questions{% endblock %}
+{% block description%}Download thousands of PubMed citations into a spreadsheet. Free, no ads, secure, encrypted, privacy, untraceable and simple to use.{% endblock %}
+{% block logo_link_url %}{% url 'pubmed2xl:download_excel' %}{{ form.pmids.value|default_if_none:"" }}{% endblock %}
+{% block left_link_url %}{% url 'pubmed2xl:download_excel' %}{{ form.pmids.value|default_if_none:"" }}{% endblock %}
+{% block left_link_text %}Download to Excel{% endblock %}
+{% block right_link_url %}{% url 'pubmed2xl:download_xml' %}{{ form.pmids.value|default_if_none:"" }}{% endblock %}
+{% block right_link_text %}Download to XML{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col">
+      <div class="accordion" id="faq">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="collapseOne">
+              <h5>How to use in PubMed?</h5>
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faq">
+            <div class="accordion-body bg-dark text-light">
+              <ol>
+                <li>Drag this link (<a class="text-success" target="_blank" href="javascript:(function(){function goToPubMed2XL(pmids){if (pmids != &quot;&quot;) {window.open(&quot;https://www.pubmed2xl.com/&quot; + pmids, '_blank');}else {alert(&quot;Hmm, looks like you didn't select any records, or did you?&quot;);}}var pmids;switch (document.domain) {case &quot;ovidsp.dc2.ovid.com&quot;:pmids = $(&quot;td.titles-checkbox input:checked&quot;).parent().siblings().find(&quot;div.article-ui&quot;).map(function(){return $(this).text().match(/([0-9]+)/)[0]; }).get().join(&quot;,&quot;);goToMPubMed2XL(pmids);break;case &quot;www.ncbi.nlm.nih.gov&quot;:pmids = jQuery(&quot;div.rprtnum input:checked&quot;).map(function(){ return this.value; }).get().join(&quot;,&quot;);goToPubMed2XL(pmids);break;case &quot;pubmed.ncbi.nlm.nih.gov&quot;:pmids = $(&quot;div#search-results section.search-results-list article input.search-result-selector:checked&quot;).map(function(){ return this.value; }).get().join(&quot;,&quot;);goToPubMed2XL(pmids);break;default:alert(&quot;Hmm, looks like you are not on a supported site, or are you?&quot;);}})()">PubMed2XL</a>) to your browser's bookmarks / favorites bar to create a button.
+                  (Note: You only have to do this once.)
+                </li>
+                <li>
+                  In a PubMed search results page, select the records you want to download. Then click on the button you just created in your browser's bookmarks / favorites bar.
+                </li>
+              </ol>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="collapseTwo">
+              <h5>How to cite?</h5>
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq">
+            <div class="accordion-body bg-dark text-light">
+              <h6>APA 7th</h6>
+              <p>Rivera Caraballo, I. (2020). PubMed2XL. Download PubMed data into MS Excel. https://pubmed2xl.com. </p>
+              
+              <h6>JAMA</h6>
+              <p>Rivera Caraballo I. PubMed2XL. Download PubMed data into MS Excel. https://pubmed2xl.com. Published 2020. Accessed {{ time }}.</p>
+
+              <h6>Chicago</h6>
+              <p>Rivera Caraballo, Ivan. “PubMed2XL.” Download PubMed data into MS Excel, 2020. https://pubmed2xl.com.
+
+              <h6>MLA 8th</h6>
+              <p>Rivera Caraballo, Ivan. “PubMed2XL.” Download PubMed Data into MS Excel, 2020, pubmed2xl.com.</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faq">
+            <div class="accordion-body bg-dark text-light">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block jscript %}
+    <script src="{% static 'pubmed2xl/js/rows_counter.js' %}"></script>
+{% endblock %}

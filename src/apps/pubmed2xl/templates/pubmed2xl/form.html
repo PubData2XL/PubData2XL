@@ -1,0 +1,29 @@
+<form method="POST" action="." class="needs-validation" novalidate="" _lpchecked="1">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="card bg-dark border-dark text-white">
+      <!-- <h5 class="card-header border-success">Download PubMed Data</h5> -->
+      <div class="card-body">
+        <div class="form-group">
+          <!-- <label for="{{ form.pmids.label }}" class="col-form-label requiredField">{{ form.pmids.label }}: </label> -->
+          {% if form.pmids.errors %}
+            {% for error in form.pmids.errors %}
+              <div class="text-danger"><strong>{{ error|escape }}</strong></div>
+            {% endfor %}
+          {% endif %}
+          <div class="grow-wrap" data-replicated-value="{{ form.pmids.value|default_if_none:"" }}">
+            <textarea class="form-control bg-dark border-success text-white outline-success form"
+            name="{{ form.pmids.html_name }}" id="{{ form.pmids.id_for_label }}"
+            placeholder="One PMID per row." required
+            >{{ form.pmids.value|default_if_none:"" }}</textarea>
+          </div>
+          {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+          {% endif %}
+          <small id="count">1 row</small>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <input type="submit" name="Download" value="{{ download_button_text }}" class='btn btn-success col-12'>
+</form>

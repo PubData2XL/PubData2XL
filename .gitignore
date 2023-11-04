@@ -1,0 +1,12 @@
+.env
+error.log
+db.sqlite3
+pyvenv.cfg
+__pycache__
+node_requirements.txt
+/src/apps/pubmed2xl/temp
+/venv
+/.venv
+/.vscode
+/static
+/media

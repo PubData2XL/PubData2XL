@@ -1,0 +1,90 @@
+.form {
+    min-height: 30vh !important;
+}
+/* green #198754*/
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #198754;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
+}
+.btn-outline-light:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
+}
+.accordion-item{
+    background-color: #212529;
+    border: 0px;
+}
+.accordion-item:first-child {
+    border-top: 1px solid;
+    border-top-color: #198754 !important;
+}
+.accordion-body{
+    border: 1px solid;
+    border-top: 0 !important;    
+    border-color: #198754 !important;
+}
+.accordion-button{
+    color: #fff;
+    background-color: #212529;
+    border-bottom: 1px solid;
+    border-bottom-color: #198754 !important;
+}
+.accordion-button:not(.collapsed) {
+    /*This changes the accordionheader (button)*/
+    color: #fff;
+    background-color: #198754;
+    border-bottom: 1px solid;
+    border-bottom-color: #198754 !important;
+}
+.accordion-button:hover{
+    color: #fff;
+    background-color: #198754;
+}
+.accordion-button:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0;
+}
+.accordion-button:active{
+    color: #fff;
+    background-color: #198754;
+    border: 0;
+    border-bottom: 1px solid!important;
+    border-bottom-color: #212529 !important;
+}
+.accordion-button::after {
+    /*This change the color of the carat*/
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Autoresize textarea */
+
+.grow-wrap {
+    /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+    display: grid;
+}
+.grow-wrap::after {
+    /* Note the weird space! Needed to preventy jumpy behavior */
+    content: attr(data-replicated-value) " ";
+
+    /* This is how textarea text behaves */
+    white-space: pre-wrap;
+
+    /* Hidden from view, clicks, and screen readers */
+    visibility: hidden;
+}
+.grow-wrap > textarea {
+    /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+    resize: none;
+
+    /* Firefox shows scrollbar on growth, you can hide like this. */
+    overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+    /* Identical styling required!! */
+    padding: 10px;
+    /* Place on top of each other */
+    grid-area: 1 / 1 / 2 / 2;
+}

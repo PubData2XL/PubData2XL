@@ -1,0 +1,11 @@
+pip
+Django
+nodeenv
+gunicorn
+python-dotenv
+biopython
+pandas
+numpy
+XlsxWriter
+psycopg2
+livereload
