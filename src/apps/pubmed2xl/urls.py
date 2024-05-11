@@ -3,7 +3,7 @@ from django.urls import path, re_path
 from django.shortcuts import redirect
 from .views import redirect_view, download_excel, download_xml, faq
 
-app_name = 'pubmed2xl'
+app_name = 'pubdata2xl'
 urlpatterns = [
     re_path(r'^faq/(?P<pmid>((.{1,8}){1}(,\s?.{1,8})*)?)?$', faq, name="faq"),
     re_path(r'^xml/(?P<pmid>((.{1,8}){1}(,\s?.{1,8})*)?)?$', download_xml, name="download_xml"),
