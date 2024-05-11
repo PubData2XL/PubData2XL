@@ -1,4 +1,4 @@
-"""PubMed2XL Views."""
+"""PubData2XL Views."""
 import io
 import os
 import uuid
@@ -32,14 +32,14 @@ DECLARATION_AND_DOCTYPE = '''<?xml version="1.0" ?>
 '''
 
 def redirect_view(request, pmid):
-    response = redirect(reverse("pubmed2xl:download_excel") + pmid)
+    response = redirect(reverse("pubdata2xl:download_excel") + pmid)
     return response
 
 def faq(request, pmid):
     """."""
     context = {'time': datetime.datetime.now().strftime ("%B %d, %Y")} #October 10, 2020
-    template = "pubmed2xl/faq.html"
-    context["page_h1_title"] = "PubMed2XL"
+    template = "pubdata2xl/faq.html"
+    context["page_h1_title"] = "PubData2XL"
     initial = ""
     if len(pmid) >=1:
         initial = {"pmids": pmid.replace("/", "").replace(" ", "")}
@@ -76,23 +76,23 @@ def download_excel(request, pmid):
             dframe = pd.DataFrame(data)
             output = io.BytesIO()
             writer = pd.ExcelWriter(output, engine='xlsxwriter')
-            dframe.to_excel(writer, sheet_name='PubMed2XL', index=False)
+            dframe.to_excel(writer, sheet_name='PubData2XL', index=False)
             writer.close()
             response = HttpResponse(output.getvalue(), content_type=CONTENT_TYPE)
             response['Content-Disposition'] = "attachment; filename=" + str(uuid.uuid1()) + ".xlsx"
             return response
         else:
             context['form'] = GetPMIDsForm(request.POST)
-            return render(request, 'pubmed2xl/index.html', context)
-    context["page_h1_title"] = "PubMed2XL"
+            return render(request, 'pubdata2xl/index.html', context)
+    context["page_h1_title"] = "PubData2XL"
     context["download_button_text"] = "Download Excel File"
-    return render(request, 'pubmed2xl/index.html', context)
+    return render(request, 'pubdata2xl/index.html', context)
 
 
 def download_xml(request, pmid):
     """."""
     context = {}
-    template = 'pubmed2xl/xml.html'
+    template = 'pubdata2xl/xml.html'
     if request.method == "GET":
         initial = ""
         if len(pmid) >=1:
@@ -123,6 +123,6 @@ def download_xml(request, pmid):
         else:
             context['form'] = GetPMIDsForm(request.POST)
             return render(request, template, context)
-    context["page_h1_title"] = "PubMed2XML"
+    context["page_h1_title"] = "PubData2XML"
     context["download_button_text"] = "Download XML File"
     return render(request, template, context)
