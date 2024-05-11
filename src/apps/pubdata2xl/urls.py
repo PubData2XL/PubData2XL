@@ -1,11 +1,11 @@
 """."""
 from django.urls import path, re_path
 from django.shortcuts import redirect
-from .views import redirect_view, download_excel, download_xml, faq
+from .views import redirect_view, download_excel, download_xml, news
 
 app_name = 'pubdata2xl'
 urlpatterns = [
-    re_path(r'^faq/(?P<pmid>((.{1,8}){1}(,\s?.{1,8})*)?)?$', faq, name="faq"),
+    re_path(r'^news/(?P<pmid>((.{1,8}){1}(,\s?.{1,8})*)?)?$', news, name="news"),
     re_path(r'^xml/(?P<pmid>((.{1,8}){1}(,\s?.{1,8})*)?)?$', download_xml, name="download_xml"),
     re_path(r'^xlsx/(?P<pmid>((.{1,8}){1}(,\s?.{1,8})*)?)?$', download_excel, name="download_excel"),
     # Please note the slight diference between the regex below and the above ones.

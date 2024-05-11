@@ -35,11 +35,11 @@ def redirect_view(request, pmid):
     response = redirect(reverse("pubdata2xl:download_excel") + pmid)
     return response
 
-def faq(request, pmid):
+def news(request, pmid):
     """."""
     context = {'time': datetime.datetime.now().strftime ("%B %d, %Y")} #October 10, 2020
-    template = "pubdata2xl/faq.html"
-    context["page_h1_title"] = "PubData2XL"
+    template = "pubdata2xl/news.html"
+    context["page_h1_title"] = "PubData2XL News"
     initial = ""
     if len(pmid) >=1:
         initial = {"pmids": pmid.replace("/", "").replace(" ", "")}

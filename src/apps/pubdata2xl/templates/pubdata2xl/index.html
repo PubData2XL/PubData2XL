@@ -7,8 +7,8 @@
 {% block left_link_url %}{% url 'pubdata2xl:download_xml' %}{% endblock %}
 {% block logo_link_url %}{% url 'pubdata2xl:download_xml' %}{% endblock %}
 {% block left_link_text %}Download to XML{% endblock %}
-{% block right_link_url %}{% url 'pubdata2xl:faq' %}{% endblock %}
-{% block right_link_text %}FAQ's{% endblock %}
+{% block right_link_url %}{% url 'pubdata2xl:news' %}{% endblock %}
+{% block right_link_text %}News{% endblock %}
 {% block content %}{% include 'pubdata2xl/form.html' %}{% endblock %}
 {% block jscript %}
     <script src="{% static 'pubdata2xl/js/rows_counter.js' %}"></script>
