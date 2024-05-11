@@ -4,7 +4,7 @@ db.sqlite3
 pyvenv.cfg
 __pycache__
 node_requirements.txt
-/src/apps/pubmed2xl/temp
+/src/apps/pubdata2xl/temp
 /venv
 /.venv
 /.vscode
