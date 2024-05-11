@@ -33,6 +33,10 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "pubmed2xl.com",
     "www.pubmed2xl.com",
+    "pubdata2xl.com",
+    "www.pubdata2xl.com",
+    "pubdata.org",
+    "www.pubdata.org",
 ]
 
 
@@ -47,8 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'apps.pwa.apps.PWAConfig',
-    'apps.pubmed2xl.apps.PubMed2XLConfig',
-    'livereload',
+    'apps.pubdata2xl.apps.PubData2XLConfig',
+    #'livereload',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
