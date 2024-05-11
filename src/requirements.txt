@@ -7,5 +7,4 @@ biopython
 pandas
 numpy
 XlsxWriter
-psycopg2
-livereload
+psycopg2-binary
