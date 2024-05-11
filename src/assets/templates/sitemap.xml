@@ -18,4 +18,40 @@
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://pubdata2xl.com/</loc>
+        <lastmod>2023-09-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pubdata2xl.com/xml/</loc>
+        <lastmod>2023-09-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pubdata2xl.com/faq/</loc>
+        <lastmod>2023-09-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pubdata.org/</loc>
+        <lastmod>2023-09-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pubdata.org/xml/</loc>
+        <lastmod>2023-09-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pubdata.org/faq/</loc>
+        <lastmod>2023-09-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
