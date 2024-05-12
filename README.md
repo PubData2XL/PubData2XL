@@ -101,8 +101,6 @@ server {
             proxy_send_timeout 1800;
             proxy_read_timeout 1800;
             send_timeout 1800;
-            #auth_basic "Private Property";
-            #auth_basic_user_file /etc/nginx/.htpasswd;
         }
         server_tokens off;
         add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
