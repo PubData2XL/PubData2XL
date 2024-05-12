@@ -2,7 +2,7 @@
 It is a web application built with Django in Python, designed to facilitate the downloading of PubMed data into Microsoft Excel spreadsheets and XML files.
 
 # Requirements
-PubData2XL is compatible with any system that supports Python installation, including Windows, Mac, and Linux platforms. At present, it operates on an AlmaLinux server equipped with 2GB of RAM, accommodating approximately 400 monthly visitors. You may adjust the server capacity based on your specific requirements, scaling either upwards or downwards as necessary.
+PubData2XL is compatible with any system that supports Python, including Windows, Mac, and Linux platforms. At present, it operates on an AlmaLinux server equipped with 2GB of RAM, accommodating approximately 400 monthly visitors. You may adjust the server capacity based on your specific requirements, scaling either upwards or downwards as necessary.
 
 # How to install PubData2XL?
 The provided instructions are tailored for setting up PubData2XL on an AlmaLinux minimal server from DigitalOcean, which is the configuration we currently utilize. However, analogous procedures will be required to install PubData2XL on different platforms. It’s important to adapt the steps to fit the specific environment and system requirements of the platform you are using.
