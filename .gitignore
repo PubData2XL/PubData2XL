@@ -1,5 +1,7 @@
 .env
 error.log
+access.log
+restart_gunicorn_if_not_alive.sh
 db.sqlite3
 pyvenv.cfg
 __pycache__
