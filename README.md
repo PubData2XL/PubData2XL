@@ -256,6 +256,7 @@ sudo systemctl status crond
 # Periodically update PubData2XL to the newest version.
 ################################################################################
 ```
+sudo dnf update -y && sudo dnf upgrade -y && sudo dnf clean all
 cd /home/sammy/webapps/pubdata2xl
 source /home/sammy/webapps/pubdata2xl/.venv/bin/activate
 sudo wget https://github.com/PubData2XL/PubData2XL/archive/refs/heads/main.zip
