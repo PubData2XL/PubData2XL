@@ -39,7 +39,7 @@ def news(request, pmid):
     """."""
     context = {'time': datetime.datetime.now().strftime ("%B %d, %Y")} #October 10, 2020
     template = "pubdata2xl/news.html"
-    context["page_h1_title"] = "PubData2XL News"
+    context["page_h1_title"] = "PubData2XL"
     initial = ""
     if len(pmid) >=1:
         initial = {"pmids": pmid.replace("/", "").replace(" ", "")}
