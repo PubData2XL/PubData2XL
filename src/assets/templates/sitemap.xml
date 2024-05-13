@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://pubmed2xl.com/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://pubmed2xl.com/xml/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://pubmed2xl.com/faq/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <loc>https://pubmed2xl.com/news/</loc>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://pubdata2xl.com/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://pubdata2xl.com/xml/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://pubdata2xl.com/faq/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <loc>https://pubdata2xl.com/news/</loc>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://pubdata.org/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://pubdata.org/xml/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://pubdata.org/faq/</loc>
-        <lastmod>2023-09-01</lastmod>
+        <loc>https://pubdata.org/news/</loc>
+        <lastmod>2024-05-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
