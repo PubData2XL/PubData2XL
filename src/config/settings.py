@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'apps.pwa.apps.PWAConfig',
     'apps.pubdata2xl.apps.PubData2XLConfig',
-    #'livereload',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
@@ -148,11 +147,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Production Security
 #https://docs.djangoproject.com/en/3.2/ref/settings
 
-# SECURE_SSL_REDIRECT = True
-# SESSION_COOKIE_SECURE = True
-# SESSION_COOKIE_HTTPONLY = True
-# CSRF_COOKIE_HTTPONLY = True
-# CSRF_COOKIE_SAMESITE = "Strict"
-# CSRF_COOKIE_SECURE = True
-# CSRF_COOKIE_NAME = '__Host-csrftoken'
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SAMESITE = "Strict"
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_NAME = '__Host-csrftoken'
 NCBI_API_KEY = str(os.getenv('NCBI_API_KEY'))
