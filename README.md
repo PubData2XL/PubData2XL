@@ -76,6 +76,8 @@ sudo systemctl start nginx
 server {
 	listen 80;
         listen [::]:80; # use only if IPv6 is available.
+        listen [::]:443 ssl ipv6only=on http2; # managed by Certbot
+        listen 443 ssl http2; # managed by Certbot
         #server_name _; # use this if running in localhost. e.g. virtual box.
         server_name www.pubdata2xl.com pubdata2xl.com; # if domain is available use this instead.
         
