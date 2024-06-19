@@ -3,7 +3,7 @@ var CACHE_URLS = [
     '',
     '/xlsx',
     '/xml',
-    '/faq',
+    '/news',
     '/offline',
     '/static/css/bootstrap.min.css',
     '/static/js/bootstrap.min.js',
