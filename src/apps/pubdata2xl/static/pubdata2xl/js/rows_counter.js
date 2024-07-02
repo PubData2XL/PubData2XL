@@ -13,8 +13,13 @@ textarea.addEventListener('input', () => {
 // Count how many rows (pmids) in textarea.
 function rowsCounter(textarea, counter, link_ids, regex) {
   const text = textarea.value.replace("/",",");
-  const lines = text.split("\n");
-  const count = lines.length;
+  const lines = text.split("\n"); //PMIDS
+  const filtered = lines.filter(function(item, index) {
+    return item !== "" || index == lines.length - 1 
+  })
+  textarea.value = filtered.join("\r\n") 
+  textarea.parentNode.dataset.replicatedValue = textarea.value;
+  const count = filtered.length;
   row = " rows"
   if (count <= 1){
     row = " row"
@@ -26,7 +31,7 @@ function rowsCounter(textarea, counter, link_ids, regex) {
     // console.log(link_ids[i])
     var anchor = document.getElementById(link_ids[i]);
     var link = anchor.getAttribute("href").match(regex);
-    anchor.setAttribute("href", link + lines);
+    anchor.setAttribute("href", link + filtered);
   }
 }
 // Set blinking caret at the end on load
