@@ -5,20 +5,19 @@ const link_ids = ['left_link_url', 'right_link_url','logo_link_url'];
 const baseURL_regex = ".*\/";
 
 textarea.addEventListener(['load', 'input'], rowsManager(textarea, counter, link_ids, baseURL_regex));
-// textarea.addEventListener(, () => {
-//   //textarea.value = textarea.value 
-//   //textarea.parentNode.dataset.replicatedValue = textarea.value;
-//   rowsManager(textarea, counter, link_ids, baseURL_regex);
-// })
 // Count how many rows (pmids) in textarea.
 function rowsManager(textarea, counter, link_ids, regex) {
+  //clean text, remove all none numeric characters.
   const text = textarea.value.replace(/[^0-9\n]/g, '').replace("/",",");
   const lines = text.split("\n"); //PMIDS
+  //remove all empty lines except if empty line is the last line.
   const filtered = lines.filter(function(item, index) {
     return item !== "" || index == lines.length - 1 
   })
+  //Update the values of the textarea
   textarea.value = filtered.join("\r\n") 
   textarea.parentNode.dataset.replicatedValue = textarea.value;
+  //count active rows.
   const count = filtered.length;
   row = " rows"
   if (count <= 1){
