@@ -6,15 +6,18 @@ const baseURL_regex = ".*\/";
 
 textarea.addEventListener('load', rowsCounter(textarea, counter, link_ids, baseURL_regex));
 textarea.addEventListener('input', () => {
-  textarea.value = textarea.value.replace(/[^0-9\n]/g, '') 
+  textarea.value = textarea.value.replace(/[^0-9\n]/g, '')
   textarea.parentNode.dataset.replicatedValue = textarea.value;
+  console.log(textarea.value)
   rowsCounter(textarea, counter, link_ids, baseURL_regex);
 })
 // Count how many rows (pmids) in textarea.
 function rowsCounter(textarea, counter, link_ids, regex) {
   const text = textarea.value.replace("/",",");
   const lines = text.split("\n");
+  console.log(lines[i])
   const filtered = lines.filter(elm => elm);
+  console.log(filtered[i])
   const count = filtered.length;
   row = " rows"
   if (count <= 1){
@@ -27,7 +30,7 @@ function rowsCounter(textarea, counter, link_ids, regex) {
     // console.log(link_ids[i])
     var anchor = document.getElementById(link_ids[i]);
     var link = anchor.getAttribute("href").match(regex);
-    anchor.setAttribute("href", link + lines);
+    anchor.setAttribute("href", link + filtered);
   }
 }
 // Set blinking caret at the end on load
