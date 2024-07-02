@@ -6,7 +6,7 @@ const baseURL_regex = ".*\/";
 
 textarea.addEventListener('load', rowsCounter(textarea, counter, link_ids, baseURL_regex));
 textarea.addEventListener('input', () => {
-  textarea.value = textarea.value.replace(/[^0-9\n]/g, '')
+  textarea.value = textarea.value.replace(/[^0-9\n\r]/g, '')
   textarea.parentNode.dataset.replicatedValue = textarea.value;
   console.log(textarea.value)
   rowsCounter(textarea, counter, link_ids, baseURL_regex);
