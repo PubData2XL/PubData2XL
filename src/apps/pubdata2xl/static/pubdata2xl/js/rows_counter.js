@@ -8,7 +8,7 @@ textarea.addEventListener('load', rowsCounter(textarea, counter, link_ids, baseU
 textarea.addEventListener('input', rowsCounter(textarea, counter, link_ids, baseURL_regex));
 // Count how many rows (pmids) in textarea.
 function rowsCounter(textarea, counter, link_ids, regex) {
-  const text = textarea.value.replace.(/[^0-9\n]/g, '').replace("/",",");
+  const text = textarea.value.replace(/[^0-9\n]/g, '').replace("/",",");
   const lines = text.split("\n");
   const filtered = lines.filter(elm => elm);
   console.log(filtered);
