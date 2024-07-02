@@ -4,15 +4,15 @@ const link_ids = ['left_link_url', 'right_link_url','logo_link_url'];
 
 const baseURL_regex = ".*\/";
 
-textarea.addEventListener('load', rowsCounter(textarea, counter, link_ids, baseURL_regex));
+textarea.addEventListener('load', rowsManager(textarea, counter, link_ids, baseURL_regex));
 textarea.addEventListener('input', () => {
-  textarea.value = textarea.value.replace(/[^0-9\n]/g, '') 
-  textarea.parentNode.dataset.replicatedValue = textarea.value;
-  rowsCounter(textarea, counter, link_ids, baseURL_regex);
+  //textarea.value = textarea.value 
+  //textarea.parentNode.dataset.replicatedValue = textarea.value;
+  rowsManager(textarea, counter, link_ids, baseURL_regex);
 })
 // Count how many rows (pmids) in textarea.
-function rowsCounter(textarea, counter, link_ids, regex) {
-  const text = textarea.value.replace("/",",");
+function rowsManager(textarea, counter, link_ids, regex) {
+  const text = textarea.value.replace(/[^0-9\n]/g, '').replace("/",",");
   const lines = text.split("\n"); //PMIDS
   const filtered = lines.filter(function(item, index) {
     return item !== "" || index == lines.length - 1 
