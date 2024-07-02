@@ -6,18 +6,18 @@ const baseURL_regex = ".*\/";
 
 textarea.addEventListener('load', rowsCounter(textarea, counter, link_ids, baseURL_regex));
 textarea.addEventListener('input', () => {
-  textarea.value = textarea.value.replace(/[^0-9\n\r]/g, '')
-  textarea.parentNode.dataset.replicatedValue = textarea.value;
-  console.log(textarea.value)
+  // textarea.value = textarea.value.replace(/[^0-9\n]/g, '')
+  // textarea.parentNode.dataset.replicatedValue = textarea.value;
   rowsCounter(textarea, counter, link_ids, baseURL_regex);
 })
 // Count how many rows (pmids) in textarea.
 function rowsCounter(textarea, counter, link_ids, regex) {
-  const text = textarea.value.replace("/",",");
+  const text = textarea.value.replace.(/[^0-9\n]/g, '').replace("/",",");
   const lines = text.split("\n");
-  console.log(lines)
   const filtered = lines.filter(elm => elm);
-  console.log(filtered)
+  console.log(filtered);
+  textarea.value = filtered.join('\r\n');
+  textarea.parentNode.dataset.replicatedValue = textarea.value;
   const count = filtered.length;
   row = " rows"
   if (count <= 1){
