@@ -109,7 +109,6 @@ server {
         add_header Access-Control-Allow-Origin https://$host;
         add_header Access-Control-Allow-Methods "GET, POST";
         add_header X-Permitted-Cross-Domain-Policies none;
-        #deprecated add_header Expect-CT 'max-age=60, report-uri="https://$host/report"';
         add_header "X-XSS-Protection" "1; mode=block";
         add_header Referrer-Policy "same-origin";
         set $FEATURE_POLICY "geolocation 'none';";
@@ -279,6 +278,8 @@ sudo unzip main.zip
 sudo rsync --partial -avvz PubData2XL-main/src/* src/.
 sudo rm -rf main.zip PubData2XL-main/
 pip install -r src/requirements.txt
+cd /home/sammy/webapps/pubdata2xl/src
+python manage.py collectstatic --noinput
 sudo systemctl restart pubdata2xl && sudo systemctl restart nginx
 ```
 
