@@ -4,12 +4,12 @@ const link_ids = ['left_link_url', 'right_link_url','logo_link_url'];
 
 const baseURL_regex = ".*\/";
 
-textarea.addEventListener('load', rowsManager(textarea, counter, link_ids, baseURL_regex));
-textarea.addEventListener('input', () => {
-  //textarea.value = textarea.value 
-  //textarea.parentNode.dataset.replicatedValue = textarea.value;
-  rowsManager(textarea, counter, link_ids, baseURL_regex);
-})
+textarea.addEventListener(['load', 'input'], rowsManager(textarea, counter, link_ids, baseURL_regex));
+// textarea.addEventListener(, () => {
+//   //textarea.value = textarea.value 
+//   //textarea.parentNode.dataset.replicatedValue = textarea.value;
+//   rowsManager(textarea, counter, link_ids, baseURL_regex);
+// })
 // Count how many rows (pmids) in textarea.
 function rowsManager(textarea, counter, link_ids, regex) {
   const text = textarea.value.replace(/[^0-9\n]/g, '').replace("/",",");
