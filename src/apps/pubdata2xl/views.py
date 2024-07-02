@@ -48,7 +48,7 @@ def news(request, pmid):
 
 def download_excel(request, pmid):
     """."""
-    context = {}
+    context = {"page_h1_title": "PubData2XL", "download_button_text": "Download Excel File"}
     if request.method == "GET":
         initial = ""
         if len(pmid) >=1:
@@ -57,6 +57,7 @@ def download_excel(request, pmid):
     elif request.method == "POST":
         if GetPMIDsForm(request.POST).is_valid():
             pmids = request.POST.get("pmids").strip().split('\r\n')
+            pmids = [x for x in pmids if x] #remove empty strings.
             data = []
             for batch in [pmids[i * N:(i + 1) * N] for i in range((len(pmids) + N - 1) // N )]:
                 id_list = ""
@@ -84,14 +85,12 @@ def download_excel(request, pmid):
         else:
             context['form'] = GetPMIDsForm(request.POST)
             return render(request, 'pubdata2xl/index.html', context)
-    context["page_h1_title"] = "PubData2XL"
-    context["download_button_text"] = "Download Excel File"
     return render(request, 'pubdata2xl/index.html', context)
 
 
 def download_xml(request, pmid):
     """."""
-    context = {}
+    context = {"page_h1_title": "PubData2XML", "download_button_text": "Download XML File"}
     template = 'pubdata2xl/xml.html'
     if request.method == "GET":
         initial = ""
@@ -101,6 +100,7 @@ def download_xml(request, pmid):
     elif request.method == "POST":
         if GetPMIDsForm(request.POST).is_valid():
             pmids = request.POST.get("pmids").strip().split('\r\n')
+            pmids = [x for x in pmids if x] #remove empty strings.
             data = None
             for batch in [pmids[i * N:(i + 1) * N] for i in range((len(pmids) + N - 1) // N )]:
                 id_list = ""
@@ -123,6 +123,4 @@ def download_xml(request, pmid):
         else:
             context['form'] = GetPMIDsForm(request.POST)
             return render(request, template, context)
-    context["page_h1_title"] = "PubData2XML"
-    context["download_button_text"] = "Download XML File"
     return render(request, template, context)
