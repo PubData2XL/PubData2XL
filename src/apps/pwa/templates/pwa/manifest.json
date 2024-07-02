@@ -1,7 +1,7 @@
 
 {
-  "name": "PubMed2XL",
-  "short_name": "PubMed2XL",
+  "name": "PubData2XL",
+  "short_name": "PubData2XL",
   "description": "Download thousands of PubMed citations in an Excel or XML file. Free, no ads, secure, encrypted, privacy, untraceable and simple to use.",
   "start_url": "/",
   "display": "fullscreen",
