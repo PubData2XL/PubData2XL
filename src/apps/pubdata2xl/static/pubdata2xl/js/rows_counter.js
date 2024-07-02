@@ -16,9 +16,10 @@ textarea.addEventListener('input', () => {
 function rowsCounter(textarea, counter, link_ids, regex) {
   const text = textarea.value.replace("/",",");
   const lines = text.split("\n");
-  console.log(lines)
   const filtered = lines.filter(elm => elm);
   console.log(filtered)
+  textarea.value = filtered.join("\r\n")
+  textarea.parentNode.dataset.replicatedValue = textarea.value;
   const count = filtered.length;
   row = " rows"
   if (count <= 1){
