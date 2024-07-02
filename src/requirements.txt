@@ -1,4 +1,3 @@
-pip
 Django
 nodeenv
 gunicorn
@@ -8,3 +7,4 @@ pandas
 numpy
 XlsxWriter
 psycopg2-binary
+pip
