@@ -4,7 +4,8 @@ const link_ids = ['left_link_url', 'right_link_url','logo_link_url'];
 
 const baseURL_regex = ".*\/";
 
-textarea.addEventListener(['load', 'input'], rowsManager(textarea, counter, link_ids, baseURL_regex));
+textarea.addEventListener('load', rowsManager(textarea, counter, link_ids, baseURL_regex));
+textarea.addEventListener('input', rowsManager(textarea, counter, link_ids, baseURL_regex));
 // Count how many rows (pmids) in textarea.
 function rowsManager(textarea, counter, link_ids, regex) {
   console.log("Cleaning rows...")
