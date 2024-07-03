@@ -8,7 +8,7 @@ var CACHE_URLS = [
     '/static/css/bootstrap.min.css',
     '/static/js/bootstrap.min.js', 
     '/static/pubdata2xl/css/style.css',
-    '/static/pubdata2xl/js/rows_counter.js',
+    '/static/pubdata2xl/js/rows_manager.js',
     '/static/img/favicons/apple-touch-icon.png',
     '/static/img/favicons/apple-touch-icon-precomposed.png',
     '/static/img/favicons/apple-touch-icon-57x57.png',
