@@ -6,6 +6,7 @@ const baseURL_regex = ".*\/";
 
 textarea.addEventListener('load', rowsManager(textarea, counter, link_ids, baseURL_regex));
 textarea.addEventListener('input', () => {
+  console.log("Cleaning rows on input...")
   rowsManager(textarea, counter, link_ids, baseURL_regex);
 })
 
