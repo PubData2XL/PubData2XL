@@ -7,6 +7,7 @@ const baseURL_regex = ".*\/";
 textarea.addEventListener(['load', 'input'], rowsManager(textarea, counter, link_ids, baseURL_regex));
 // Count how many rows (pmids) in textarea.
 function rowsManager(textarea, counter, link_ids, regex) {
+  console.log("Cleaning rows...")
   //clean text, remove all none numeric characters.
   const text = textarea.value.replace(/[^0-9\n]/g, '').replace("/",",");
   const lines = text.split("\n"); //PMIDS
