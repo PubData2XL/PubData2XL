@@ -6,19 +6,17 @@ const baseURL_regex = ".*\/";
 
 textarea.addEventListener('load', rowsManager(textarea, counter, link_ids, baseURL_regex));
 textarea.addEventListener('input', () => {
-  console.log("Cleaning rows on input...")
   rowsManager(textarea, counter, link_ids, baseURL_regex);
 })
 
 // Count how many rows (pmids) in textarea.
 function rowsManager(textarea, counter, link_ids, regex) {
-  console.log("Cleaning rows...")
   //clean text, remove all none numeric characters.
   const text = textarea.value.replace(/[^0-9\n]/g, '').replace("/",",");
   const lines = text.split("\n"); //PMIDS
   //remove all empty lines except if empty line is the last line.
   const filtered = lines.filter(function(item, index) {
-    return item !== "" || index == lines.length - 1 
+    return item !== "" || index >= lines.length - 2 
   })
   //Update the values of the textarea
   textarea.value = filtered.join("\r\n") 
