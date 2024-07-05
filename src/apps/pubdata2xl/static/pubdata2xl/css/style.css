@@ -4,7 +4,7 @@
 /* green #198754*/
 .form-control:focus {
     color: #212529;
-    background-color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+    background-color: #fff;
     border-color: #198754;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
@@ -13,7 +13,6 @@
     box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
 }
 .accordion-item{
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
     background-color: #212529;
     border: 0px;
 }
@@ -27,20 +26,20 @@
     border-color: #198754 !important;
 }
 .accordion-button{
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+    color: #fff;
     background-color: #212529;
     border-bottom: 1px solid;
     border-bottom-color: #198754 !important;
 }
 .accordion-button:not(.collapsed) {
     /*This changes the accordionheader (button)*/
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+    color: #fff;
     background-color: #198754;
     border-bottom: 1px solid;
     border-bottom-color: #198754 !important;
 }
 .accordion-button:hover{
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+    color: #fff;
     background-color: #198754;
 }
 .accordion-button:focus {
@@ -48,7 +47,7 @@
     box-shadow: 0 0 0 0;
 }
 .accordion-button:active{
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+    color: #fff;
     background-color: #198754;
     border: 0;
     border-bottom: 1px solid!important;
