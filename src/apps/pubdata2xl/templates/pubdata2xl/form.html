@@ -2,10 +2,8 @@
     {% csrf_token %}
     {{ form.non_field_errors }}
     <div class="card bg-dark border-dark text-white">
-      <!-- <h5 class="card-header border-success">Download PubMed Data</h5> -->
       <div class="card-body">
         <div class="form-group">
-          <!-- <label for="{{ form.pmids.label }}" class="col-form-label requiredField">{{ form.pmids.label }}: </label> -->
           {% if form.pmids.errors %}
             {% for error in form.pmids.errors %}
               <div class="text-danger"><strong>{{ error|escape }}</strong></div>

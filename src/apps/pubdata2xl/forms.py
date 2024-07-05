@@ -11,10 +11,7 @@ class GetPMIDsForm(forms.Form):
         pmds = self.cleaned_data.get('pmids')
         for pmd in pmds.strip().split('\r\n'):
             pmd = pmd.strip()
-            if pmd == "":
-                pass
-                #raise forms.ValidationError("There is an empty row, please remove it.")
-            elif not re.match(PMID_REGEX, pmd) or int(pmd) > 45000000 or int(pmd) == 0:
+            if not re.match(PMID_REGEX, pmd) or int(pmd) > 45000000 or int(pmd) == 0:
                 raise forms.ValidationError(pmd + " is not a valid PMID.")
         #raise forms.ValidationError(p)
         return pmds
