@@ -71,7 +71,7 @@ sudo systemctl start nginx
 ### Remove or comment (#) the server lines starting at server { ... and ending in ... }
 ```sudo nano /etc/nginx/nginx.conf```
 
-#### Add the following lines at the end of thee http bracket:
+#### Add the following lines at the end of the http bracket:
 ```
 server_names_hash_bucket_size 64;
 add_header X-Frame-Options SAMEORIGIN;
