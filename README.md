@@ -70,16 +70,90 @@ sudo systemctl start nginx
 ```sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx_original.conf```
 ### Remove or comment (#) the server lines starting at server { ... and ending in ... }
 ```sudo nano /etc/nginx/nginx.conf```
+
+#### Add the following lines at the end of thee http bracket:
+```
+server_names_hash_bucket_size 64;
+add_header X-Frame-Options SAMEORIGIN;
+add_header X-Content-Type-Options nosniff always;
+```
+
+####This is the resulting code.
+
+```
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+    server_names_hash_bucket_size 64;
+    add_header X-Frame-Options SAMEORIGIN;
+    add_header X-Content-Type-Options nosniff always;
+}
+```
 ### Create and apply the web server configuration lines.
 ```sudo nano /etc/nginx/conf.d/pubdata2xl.conf```
+
 ```
 server {
+	# This configuration is only needed if code is running in remote server.
+        listen 80;
+        listen [::]:80;
+        server_name www.pubdata2xl.com pubdata2xl.com
+        return 404;
+
+        if ($host = www.pubdata2xl.com) {
+            return 301 https://$host$request_uri;
+        }
+
+        if ($host = pubdata2xl.com) {
+            return 301 https://$host$request_uri;
+        }
+}
+
+```
+```
+server {
+	# Localhost settings 
 	listen 80;
         listen [::]:80; # use only if IPv6 is available.
+        #server_name _;
+
+	# Remote server settings
         listen [::]:443 ssl ipv6only=on http2; # managed by Certbot
         listen 443 ssl http2; # managed by Certbot
-        #server_name _; # use this if running in localhost. e.g. virtual box.
-        server_name www.pubdata2xl.com pubdata2xl.com; # if domain is available use this instead.
+        server_name www.pubdata2xl.com pubdata2xl.com;
         
         location /static {
             alias /home/sammy/webapps/pubdata2xl/static;
