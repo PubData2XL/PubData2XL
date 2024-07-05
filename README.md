@@ -78,7 +78,7 @@ add_header X-Frame-Options SAMEORIGIN;
 add_header X-Content-Type-Options nosniff always;
 ```
 
-####This is the resulting code.
+#### This is the resulting code.
 
 ```
 # For more information on configuration, see:
