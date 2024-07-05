@@ -13,6 +13,7 @@
     box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
 }
 .accordion-item{
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
     background-color: #212529;
     border: 0px;
 }
