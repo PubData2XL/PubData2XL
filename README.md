@@ -19,8 +19,16 @@ adduser sammy
 passwd sammy
 usermod -aG wheel sammy
 ```
-### Install Nano editor and SELinux Policy Core Python Utilities
-```sudo dnf -y install nano policycoreutils-python-utils```
+### Install Nano editor, wget and SELinux Policy Core Python Utilities
+```sudo dnf -y install nano wget policycoreutils-python-utils```
+### Set nano as default Text Editor.
+```sudo EDITOR=/usr/bin/nano visudo```
+
+At the end of the file type:
+```
+Defaults editor = /usr/bin/vim:/usr/bin/vi:/usr/bin/nano
+Defaults    env_keep += "EDITOR"
+```
 ### Optional security recommendation: Change the SSH port from the default port 22 to one of your choice.
 ```
 sudo nano /etc/ssh/sshd_config
@@ -32,7 +40,7 @@ PermitRootLogin no
 PasswordAuthentication yes
 ```
 ```sudo semanage port -a -t ssh_port_t -p tcp 5555```
-### Install Firewall and open ports for http, https and ssh
+### Install Firewall and open ports for http, https and block ssh (22) port.
 ```
 sudo dnf install -y firewalld
 sudo systemctl start firewalld
