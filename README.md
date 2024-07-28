@@ -19,8 +19,8 @@ adduser sammy
 passwd sammy
 usermod -aG wheel sammy
 ```
-### Install Nano editor, wget and SELinux Policy Core Python Utilities
-```sudo dnf -y install nano wget policycoreutils-python-utils```
+### Install Nano editor and SELinux Policy Core Python Utilities
+```sudo dnf -y install nano policycoreutils-python-utils```
 ### Set nano as default Text Editor.
 ```sudo EDITOR=/usr/bin/nano visudo```
 
